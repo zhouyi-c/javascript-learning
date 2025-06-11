@@ -4,6 +4,16 @@ const story = document.querySelector('.story');
 
 /* 
 1.先获取页面元素，对哪些元素进行操作
+queryselector 和getelementbyid都是为了获得dom元素
+专门用于获取 ​​ID​​ 为 customname 的元素（<input id="customname">）。
+​​特点​​：
+只适用于 id 选择器（#customname）。
+性能比 querySelector 稍高（因为浏览器优化了 getElementById）。
+
+
+
+
+
 */
 function randomValueFromArray(array) {
   return array[Math.floor(Math.random() * array.length)];
