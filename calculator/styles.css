@@ -1,0 +1,302 @@
+/* 基本重置与全局样式*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+/* 基本重置与全局样式
+*：选择所有元素
+
+margin: 0：清除所有元素的外边距（防止浏览器默认间距）
+
+padding: 0：清除所有元素的内边距
+
+box-sizing: border-box：让元素的宽度包含padding和border（更直观的尺寸计算）
+
+font-family：设置全局默认字体
+
+*/
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+    padding: 20px;
+  }
+  /*
+  background: 创建蓝色渐变背景
+
+min-height: 100vh：确保body至少和视口(屏幕)一样高
+
+display: flex：启用弹性布局
+
+justify/align：让内容水平和垂直居中
+  */
+  
+  /* 计算器容器样式 */
+  .calculator {
+    width: 100%;
+    max-width: 400px;
+    background-color: #1e1e1e;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+    /* 计算器容器样式 
+    max-width：最大宽度限制（小屏幕上自动缩小）
+
+border-radius：圆角效果
+
+box-shadow：添加阴影增强立体感
+
+padding：内边距让内容不贴边
+    
+    
+    */
+
+
+
+ 
+  .display {
+    background-color: #2d2d2d;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: right;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+   /* 显示区域样式 
+   min-height：固定最小高度防止内容变化时跳动
+
+flex-direction: column：垂直排列子元素
+
+text-align: right：数字右对齐（像真实计算器）
+   
+   */
+
+
+
+  [data-previous-operand] {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.2rem;
+    min-height: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  /*
+  显示文本
+  rgba()：带透明度的白色
+
+font-size：当前操作数显示更大
+
+overflow: hidden：防止长数字溢出容器
+  */
+
+
+  [data-current-operand] {
+    color: white;
+    font-size: 2.5rem;
+    margin-top: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+
+ 
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+   /* 按钮区域样式 
+   grid：创建网格布局
+
+repeat(4, 1fr)：4列等宽
+
+gap：按钮间距
+   
+   
+   */
+
+  button {
+    width: 100%;
+    height: 70px;
+    border-radius: 50%;
+    border: none;
+    background-color: #333;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+    /* 基础按钮样式 
+    border-radius: 50%：圆形按钮
+
+cursor: pointer：鼠标悬停变手型
+
+transition：所有样式变化都有0.2秒动画
+    
+    
+    */
+  button:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+  }
+  
+  button:active {
+    transform: scale(0.95);
+  }
+  /*
+  按钮交互效果
+  hover：鼠标悬停时颜色变亮并上移
+
+active：点击时轻微缩小
+  
+  */
+
+
+
+
+ 
+  [data-all-clear] {
+    background-color: #ff3b30;
+  }
+  
+  [data-delete] {
+    background-color: #ff9500;
+  }
+  
+  [data-operation] {
+    background-color: #ff9500;
+  }
+  
+  [data-operation]:hover {
+    background-color: #ffaa33;
+  }
+  
+  [data-equals] {
+    background-color: #4cd964;
+  }
+  
+
+
+
+  /* 跨两列的按钮 */
+  .span-two {
+    grid-column: span 2;
+    border-radius: 35px;
+  }
+  
+ /* 特殊按钮样式 
+ 不同功能的按钮使用不同颜色
+
+span-two类让按钮占据两列
+
+border-radius调整形状为胶囊形
+ 
+ */
+
+
+
+  /* 响应式设计 - 小屏幕适配
+  当屏幕宽度小于500px时：
+
+减小内边距
+
+缩小按钮高度
+
+减小显示字体
+  
+  */
+  @media (max-width: 500px) {
+    .calculator {
+      max-width: 95vw;
+      padding: 15px;
+    }
+    
+    button {
+      height: 60px;
+      font-size: 1.3rem;
+    }
+    
+    .display {
+      padding: 15px;
+    }
+    
+    [data-current-operand] {
+      font-size: 2rem;
+    }
+  }
+
+
+/*
+css的开发流程
+逐步积累的结果，通常的开发流程是：
+
+先写最基础的结构（比如先设置颜色和大小）
+
+然后逐步添加细节（圆角、阴影等）
+
+最后完善交互效果（悬停、点击状态）
+
+再做响应式调整
+
+
+属性记忆问题：
+CSS属性可以分成几大类，每类记住几个常用属性：
+
+布局类
+display (flex/grid/block)
+
+position
+
+flex-direction
+
+grid-template-columns
+
+justify-content
+
+align-items
+
+盒模型类
+width/height
+
+margin/padding
+
+border
+
+box-sizing
+
+视觉效果类
+background/color
+
+border-radius
+
+box-shadow
+
+opacity
+
+文字类
+font-family/font-size
+
+text-align
+
+line-height
+
+动画交互类
+transition
+
+transform
+
+hover/active伪类
+
+
+*/

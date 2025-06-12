@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>javascript计算器</title>
+
+</head>
+<body>
+    <div class="calculator">
+        <!-- 计算显示结果区 -->
+        <div class="display">
+            <div class="previous-operand" data-previous-operand></div>
+            <div class="current-operand" data-current-operand>0</div>
+        </div>
+        
+        <!-- 按钮区 -->
+        <div class="buttons">
+            <!-- 第一行：功能按钮 -->
+            <button data-all-clear class="span-two">AC</button>
+            <button data-delete>DEL</button>
+            <button data-operation>%</button>
+            <button data-operation>÷</button>
+            
+            <!-- 第二行：数字按钮 -->
+            <button data-number>7</button>
+            <button data-number>8</button>
+            <button data-number>9</button>
+            <button data-operation>×</button>
+            
+            <!-- 第三行：数字按钮 -->
+            <button data-number>4</button>
+            <button data-number>5</button>
+            <button data-number>6</button>
+            <button data-operation>-</button>
+            
+            <!-- 第四行：数字按钮 -->
+            <button data-number>1</button>
+            <button data-number>2</button>
+            <button data-number>3</button>
+            <button data-operation>+</button>
+            
+            <!-- 第五行：底部按钮 -->
+            <button data-number>0</button>
+            <button data-number>.</button>
+            <button data-equals>=</button>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
