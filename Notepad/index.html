@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>待办事项记事本</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 主容器 -->
+    <div class="container">
+        <!-- 标题区域 -->
+        <header>
+            <h1><i class="icon">✓</i> 待办事项记事本</h1>
+            <p>记录你的任务，提升工作效率</p>
+        </header>
+        
+        <!-- 任务输入区域 -->
+        <div class="input-area">
+            <input type="text" id="taskInput" placeholder="添加新任务...">
+            <button id="addTaskBtn">
+                <i class="icon">+</i> 添加任务
+            </button>
+        </div>
+        
+        <!-- 任务控制区域 -->
+        <div class="controls">
+            <button class="filter-btn active" data-filter="all">全部任务</button>
+            <button class="filter-btn" data-filter="active">待完成</button>
+            <button class="filter-btn" data-filter="completed">已完成</button>
+        </div>
+        
+        <!-- 任务统计区域 -->
+        <div class="stats">
+            <span id="taskCount">0 个任务</span>
+            <span id="completedCount">已完成: 0</span>
+        </div>
+        
+        <!-- 任务列表区域 -->
+        <div class="task-list" id="taskList">
+            <!-- 空状态提示 -->
+            <div class="empty-state">
+                <i class="icon">✓</i>
+                <h3>暂无待办事项</h3>
+                <p>添加任务以开始你的计划</p>
+            </div>
+            
+        </div>
+        
+        <!-- 页脚区域 -->
+        <footer>
+            <p>双击任务可编辑 | 点击任务左侧标记为完成</p>
+        </footer>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

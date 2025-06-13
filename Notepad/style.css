@@ -1,0 +1,283 @@
+/* 重置与基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 主容器样式 */
+.container {
+    width: 100%;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 标题区域样式 */
+header {
+    background: #4a69bd;
+    color: white;
+    padding: 25px 20px;
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+header .icon {
+    font-size: 1.8rem;
+    font-weight: normal;
+}
+
+header p {
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+
+/* 输入区域样式 */
+.input-area {
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 14px 18px;
+    border: 2px solid #dee2e6;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-area input:focus {
+    border-color: #4a69bd;
+    box-shadow: 0 0 0 3px rgba(74, 105, 189, 0.2);
+}
+
+.input-area button {
+    background: #4a69bd;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 0 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-area button:hover {
+    background: #3a59ad;
+    transform: translateY(-2px);
+}
+
+.input-area button:active {
+    transform: translateY(0);
+}
+
+/* 控制区域样式 */
+.controls {
+    display: flex;
+    padding: 15px 20px;
+    background: #f1f3f5;
+    border-bottom: 1px solid #e9ecef;
+    gap: 10px;
+}
+
+.controls button {
+    padding: 8px 16px;
+    background: #e9ecef;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.controls button.active {
+    background: #4a69bd;
+    color: white;
+}
+
+.controls button:hover:not(.active) {
+    background: #dee2e6;
+}
+
+/* 统计区域样式 */
+.stats {
+    padding: 12px 20px;
+    background: #f8f9fa;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #495057;
+    border-bottom: 1px solid #e9ecef;
+}
+
+/* 任务列表样式 */
+.task-list {
+    padding: 10px 0;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid #e9ecef;
+    animation: slideIn 0.3s ease-out;
+    transition: all 0.3s ease;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.task-item:hover {
+    background: #f8f9fa;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    color: #adb5bd;
+}
+
+.task-checkbox {
+    margin-right: 15px;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    accent-color: #4a69bd;
+}
+
+.task-text {
+    flex: 1;
+    font-size: 1.1rem;
+    color: #212529;
+    word-break: break-word;
+    padding-right: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #e03131;
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all 0.2s ease;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-btn:hover {
+    opacity: 1;
+    background: #ffeaea;
+}
+
+/* 空状态样式 */
+.empty-state {
+    text-align: center;
+    padding: 50px 20px;
+    color: #868e96;
+}
+
+.empty-state .icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    opacity: 0.3;
+}
+
+.empty-state h3 {
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+/* 页脚样式 */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #868e96;
+    font-size: 0.9rem;
+    background: #f8f9fa;
+}
+
+/* 编辑输入框样式 */
+.edit-input {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 1.1rem;
+    border: 2px solid #4a69bd;
+    border-radius: 4px;
+    outline: none;
+}
+
+/* 响应式设计 */
+@media (max-width: 600px) {
+    .container {
+        max-width: 100%;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .input-area {
+        flex-direction: column;
+    }
+    
+    .input-area button {
+        padding: 14px;
+        justify-content: center;
+    }
+    
+    .controls {
+        flex-wrap: wrap;
+    }
+    
+    .task-item {
+        padding: 12px 15px;
+    }
+}
