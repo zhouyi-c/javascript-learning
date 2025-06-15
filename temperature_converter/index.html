@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>温度转换器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>温度转换器</h1>
+        <p class="subtitle">摄氏度(℃) ↔ 华氏度(℉)</p>
+        
+        <div class="converter-card">
+            <div class="input-group">
+                <label for="celsius">摄氏度 (℃):</label>
+                <input type="number" id="celsius" placeholder="输入摄氏度值" 
+                       oninput="convertTemperature()">
+            </div>
+            
+            <div class="conversion-icon">⇄</div>
+            
+            <div class="result-group">
+                <label for="fahrenheit">华氏度 (℉):</label>
+                <div id="fahrenheit" class="result-display">--</div>
+            </div>
+        </div>
+        
+        <div class="formula-box">
+            <p>转换公式: ℉ = (℃ × 9/5) + 32</p>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

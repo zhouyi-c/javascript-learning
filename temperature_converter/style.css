@@ -1,0 +1,193 @@
+/* styles.css */
+/* 1. 全局样式重置 - 解决浏览器默认样式差异 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* 确保元素尺寸包含边框和内边距 */
+  }
+  
+  /* 2. 基础字体和色彩体系 */
+  :root {
+    --primary: #3498db;     /* 主色调 */
+    --secondary: #2c3e50;   /* 辅助色 */
+    --light: #ecf0f1;       /* 浅背景 */
+    --dark: #34495e;        /* 深文本 */
+    --success: #2ecc71;     /* 成功色 */
+    --error: #e74c3c;       /* 错误色 */
+    --shadow: rgba(0,0,0,0.1); /* 阴影 */
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark);
+    background-color: #f8f9fa;
+    padding: 20px;
+  }
+  
+  /* 3. 主容器 - 响应式设计 */
+  .container {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px var(--shadow);
+  }
+  
+  /* 4. 标题样式 */
+  h1 {
+    text-align: center;
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  
+  .subtitle {
+    text-align: center;
+    color: #7f8c8d;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+  }
+  
+  /* 5. 转换器卡片 - 使用Flexbox布局 */
+  .converter-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* 6. 输入/结果组样式 */
+  .input-group, .result-group {
+    flex: 1;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--secondary);
+  }
+  
+  /* 7. 输入框交互设计 */
+  input[type="number"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+  }
+  
+  input[type="number"]:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    outline: none;
+  }
+  
+  /* 8. 结果展示区 */
+  .result-display {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: var(--light);
+    border-radius: 8px;
+    font-size: 1.1rem;
+    min-height: 46px; /* 保持与输入框相同高度 */
+    display: inline-block; /* 关键：使transform生效 */
+  }
+  
+  /* 9. 转换图标动画 */
+  .conversion-icon {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--primary);
+    margin: 0.5rem 0;
+  }
+  
+  /* 10. 公式展示区 */
+  .formula-box {
+    background-color: #f0f7ff;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    border-left: 4px solid var(--primary);
+  }
+  
+  .formula-box p {
+    color: #2980b9;
+    font-weight: 600;
+  }
+  
+  /* 11. 平板/桌面响应式优化 */
+  @media (min-width: 768px) {
+    .converter-card {
+      flex-direction: row;
+      align-items: center;
+    }
+    
+    .conversion-icon {
+      margin: 0 1rem;
+    }
+    
+    body {
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #74b9ff, #a29bfe);
+      min-height: 100vh;
+    }
+  }
+  
+  /* 12. 加载状态样式 */
+  .result-display:empty::before {
+    content: "--";
+    color: #95a5a6;
+  }
+  
+  /* ====== 修复的动画效果 ====== */
+  
+  /* 转换图标动画 */
+  @keyframes icon-pulse {
+    0% { opacity: 0.7; transform: scale(0.95); }
+    50% { opacity: 1; transform: scale(1.1); }
+    100% { opacity: 0.7; transform: scale(0.95); }
+  }
+  
+  .conversion-icon {
+    animation: icon-pulse 2s infinite; /* 使用新名称的动画 */
+  }
+  
+  /* 结果脉冲动画 */
+  @keyframes result-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  .result-pulse {
+    animation: result-pulse 0.3s ease-in-out;
+  }
+  
+  /* 错误抖动动画 */
+  @keyframes input-shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+  }
+  
+  .input-error {
+    border-color: var(--error) !important;
+    background-color: #ffebee !important;
+    animation: input-shake 0.5s;
+  }
+  
+  /* 焦点脉冲效果 */
+  @keyframes focus-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(52, 152, 219, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(52, 152, 219, 0); }
+  }
+  
+  input[type="number"]:focus {
+    animation: focus-pulse 1.5s infinite; /* 增加视觉引导 */
+  }
