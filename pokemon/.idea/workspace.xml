@@ -4,18 +4,49 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ed45350-fe9e-4700-9026-ec0aded5b2b8" name="Changes" comment="" />
+    <list default="true" id="9ed45350-fe9e-4700-9026-ec0aded5b2b8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../countdown/1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../countdown/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../countdown/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../countdown/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gallery-start/__MACOSX/gallery-start/images/._pic1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gallery-start/__MACOSX/gallery-start/images/._pic2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gallery-start/__MACOSX/gallery-start/images/._pic3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gallery-start/__MACOSX/gallery-start/images/._pic4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gallery-start/__MACOSX/gallery-start/images/._pic5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gallery-start/__MACOSX/gallery-start/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gallery-start/gallery-start/images/pic1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gallery-start/gallery-start/images/pic2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gallery-start/gallery-start/images/pic3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gallery-start/gallery-start/images/pic4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gallery-start/gallery-start/images/pic5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gallery-start/gallery-start/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gallery-start/gallery-start/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gallery-start/gallery-start/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jokeGenerate/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jokeGenerate/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jokeGenerate/rea-text.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jokeGenerate/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../number_guss.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-practice/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-practice/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-practice/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-practice/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../监听事件/changePagecolor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../监听事件/多个监听.html" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2yZTm8N4iVTresUEzpkDWQE38DC" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -25,6 +56,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "E:/projects/pokemon",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -50,6 +82,7 @@
       <option name="presentableId" value="Default" />
       <updated>1750041252810</updated>
       <workItem from="1750041254056" duration="3761000" />
+      <workItem from="1750227555272" duration="196000" />
     </task>
     <servers />
   </component>
